@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', async (req, res) => {
   const posts = await Post.find({});
-  res.render('index',{
+  res.render('index', {
     posts,
   });
 });
