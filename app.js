@@ -11,7 +11,7 @@ const postController = require('./controllers/postController');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/cleanblog-test-db');
+mongoose.connect('mongodb+srv://Plottek:gIMHmJQvoo1yQjjr@cluster0.uy58vep.mongodb.net/?retryWrites=true&w=majority');
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
@@ -45,7 +45,7 @@ app.delete('/post/:id', postController.photoDelete);
 
 
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server ${port} portunda başlatıldı`);
 });
