@@ -23,24 +23,24 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <form method="post" action="/post"  novalidate>
+        <form method="post" action="/post/<%= post._id %>?_method=PUT"  novalidate>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-              <label>Post Başlığı</label>
-              <input type="text" class="form-control" placeholder="Post başlığı" name="title" required data-validation-required-message="Please enter your name.">
+              <label>Post Başlığını Düzenle</label>
+              <input type="text" class="form-control" value="<%= post.title %>" name="title" required data-validation-required-message="Please enter your name.">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-              <label>Post Mesajı</label>
-              <textarea rows="5" class="form-control" placeholder="Post mesajı" name="detail" required data-validation-required-message="Please enter a message."></textarea>
+              <label>Post Mesajını Düzenle</label>
+              <textarea rows="5" class="form-control"  name="detail" required data-validation-required-message="Please enter a message."><%= post.detail %></textarea>
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <br>
           <div id="success"></div>
-          <button type="submit" class="btn btn-primary">Gönder</button>
+          <button type="submit" class="btn btn-primary">Düzenle</button>
         </form>
       </div>
     </div>
